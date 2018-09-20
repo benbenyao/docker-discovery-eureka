@@ -6,7 +6,7 @@
 
 	<groupId>com.itmuch.cloud</groupId>
 	<artifactId>docker-discovery-eureka</artifactId>
-	<version>0.0.9</version>
+	<version>0.0.10</version>
 	<packaging>jar</packaging>
 
 	<name>docker-discovery-eureka</name>
@@ -83,5 +83,14 @@
 		</plugins>
 	</build>
 
-
+	<distributionManagement> 
+		<repository> 
+			<id>nexus-releases</id> 
+			<url>http://192.168.2.140:8081/repository/hd-releases/</url> 
+		</repository> 
+		<snapshotRepository> 
+			<id>nexus-snapshots</id> 
+			<url>http://192.168.2.140:8081/repository/hd-snapshots/</url> 
+		</snapshotRepository> 
+	</distributionManagement>
 </project>
