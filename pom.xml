@@ -24,8 +24,8 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 		<spring-cloud.version>Finchley.SR1</spring-cloud.version>
-		<!-- <registryUrl>192.168.146.200:5000</registryUrl>  -->
-		<registryUrl>192.168.2.105:6000</registryUrl>
+		<registryUrl>192.168.146.200:5000</registryUrl>
+		<!-- <registryUrl>192.168.2.105:6000</registryUrl>  -->
 	</properties>
 
 	<dependencies>
