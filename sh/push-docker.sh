@@ -1,5 +1,4 @@
 #!/bin/bash
-export LANG="en_US.UTF-8"
 echo '================开始向docker仓库推送镜像================'
 CONTAINER_NAME=${1}
 POM_VERSION=${2}
