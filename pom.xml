@@ -6,7 +6,7 @@
 
 	<groupId>com.itmuch.cloud</groupId>
 	<artifactId>docker-discovery-eureka</artifactId>
-	<version>0.0.16</version>
+	<version>0.0.17</version>
 	<packaging>jar</packaging>
 
 	<name>docker-discovery-eureka</name>
