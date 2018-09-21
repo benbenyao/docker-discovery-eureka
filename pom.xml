@@ -6,7 +6,7 @@
 
 	<groupId>com.itmuch.cloud</groupId>
 	<artifactId>docker-discovery-eureka</artifactId>
-	<version>0.0.7</version>
+	<version>0.0.16</version>
 	<packaging>jar</packaging>
 
 	<name>docker-discovery-eureka</name>
@@ -24,6 +24,8 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 		<spring-cloud.version>Finchley.SR1</spring-cloud.version>
+		<registryUrl>192.168.146.200:5000</registryUrl>
+		<!-- <registryUrl>192.168.2.105:6000</registryUrl>  -->
 	</properties>
 
 	<dependencies>
@@ -58,11 +60,11 @@
 			<plugin>
 				<groupId>com.spotify</groupId>
 				<artifactId>docker-maven-plugin</artifactId>
-				<version>0.4.14</version>
-				<!--<version>1.1.1</version> -->
+				<!--<version>0.4.14</version> -->
+				<version>1.1.1</version>
 				
 				<configuration>
-					<imageName>192.168.146.200:5000/itmuch/${project.artifactId}:${project.version}</imageName>
+					<imageName>${registryUrl}/cloud/${project.artifactId}:${project.version}</imageName>
 					<forceTags>true</forceTags><!-- 强制构建相同标签名称的镜像 -->
 					<imageTags>
 						<imageTag>${project.version}</imageTag>
@@ -70,7 +72,7 @@
 					<dockerDirectory>${basedir}/docker</dockerDirectory> <!-- 指定 Dockerfile 路径-->
 					<serverId>my-docker-registry</serverId>
 					<dockerHost>http://192.168.146.200:2375</dockerHost>
-					<registryUrl>192.168.146.200:5000</registryUrl>
+					<registryUrl>${registryUrl}</registryUrl>
 					<resources>
 						<resource>
 							<targetPath>/</targetPath>
@@ -82,6 +84,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
-
 </project>
