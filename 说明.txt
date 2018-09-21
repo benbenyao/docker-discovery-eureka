@@ -1,0 +1,20 @@
+mvn -DregistryUrl=192.168.146.200:5000 clean package docker:build
+
+推送docker 镜像至仓库：
+sh push-docker.sh docker-discovery-eureka 0.0.16 192.168.2.105:6000
+
+jenkins远程执行shell命令，拉去镜像，启动docker: 四个参数分别是：容器名、镜像版本、仓库地址、对外映射端口号
+sh start-docker.sh docker-discovery-eureka 0.0.16 192.168.146.200:5000 8761
+sh start-docker.sh docker-discovery-eureka 0.0.16 192.168.2.105:6000 8761
+
+注意：sh的文件要在vim编辑再取下来
+	:set ff=unix 
+	:wq
+	
+
+
+push-docker.sh
+	是推送镜像脚本
+	
+start-docker.sh
+	是启动脚本
